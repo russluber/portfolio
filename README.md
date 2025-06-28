@@ -1,6 +1,6 @@
 # 👋 Hi, I'm Russel Luber
 
-Welcome to my personal portfolio site, built with GitHub Pages and hosted **[here](https://russluber.github.io/portfolio)**
+Welcome to my personal portfolio site, built with GitHub Pages and hosted **[here](https://russluber.github.io/portfolio)**.
 
 This site is a one-stop hub for:
 - 🧠 Blog posts and write-ups about my projects and interests
