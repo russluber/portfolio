@@ -1,7 +1,7 @@
 /*
-===============================================
-  GLOBAL JS for Portfolio Navigation + Features
-===============================================
+=========================
+  GLOBAL JS for Portfolio
+=========================
 */
 
 console.log("Global JS is loaded!");
@@ -16,6 +16,13 @@ function $$(selector, context = document) {
 // Determine base path depending on environment
 const isDev = location.hostname === "localhost" || location.hostname === "127.0.0.1";
 const BASE = isDev ? "/" : "/portfolio/";
+
+/*
+===============
+Navigation Menu
+===============
+*/
+
 
 // Define navigation links
 const pages = [
@@ -49,37 +56,51 @@ for (const page of pages) {
   nav.appendChild(a);
 }
 
-// ======================
-// Dark Mode Toggle
-// ======================
+
+
+/*
+================
+Dark mode toggle
+================
+*/
+
 const toggle = document.createElement('button');
 toggle.textContent = '🕶';
 toggle.setAttribute('aria-label', 'Toggle dark mode');
 toggle.id = 'dark-mode-toggle';
+
+// Add the button to the placeholder div
 document.getElementById('theme-toggle')?.appendChild(toggle);
 
+// Restore theme preference from localStorage
 const savedTheme = localStorage.getItem('theme');
+
 if (savedTheme) {
-  if (savedTheme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
-    toggle.textContent = '☀️';
+    // Use stored preference
+    if (savedTheme === 'dark') {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      toggle.textContent = '☀️';
+    }
+  } else {
+    // No saved preference → check system preference
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (prefersDark) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+      toggle.textContent = '☀️';
+    }
   }
-} else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-  document.documentElement.setAttribute('data-theme', 'dark');
-  toggle.textContent = '☀️';
-}
 
 toggle.addEventListener('click', () => {
-  const html = document.documentElement;
-  const isDark = html.getAttribute('data-theme') === 'dark';
-
-  if (isDark) {
-    html.removeAttribute('data-theme');
-    toggle.textContent = '🕶';
-    localStorage.setItem('theme', 'light');
-  } else {
-    html.setAttribute('data-theme', 'dark');
-    toggle.textContent = '☀️';
-    localStorage.setItem('theme', 'dark');
-  }
-});
+    const html = document.documentElement;
+    const isDark = html.getAttribute('data-theme') === 'dark';
+  
+    if (isDark) {
+      html.removeAttribute('data-theme');
+      toggle.textContent = '🕶';
+      localStorage.setItem('theme', 'light');
+    } else {
+      html.setAttribute('data-theme', 'dark');
+      toggle.textContent = '☀️';
+      localStorage.setItem('theme', 'dark');
+    }
+  });

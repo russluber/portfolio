@@ -66,3 +66,33 @@ nav .current {
   border: none;
   cursor: pointer;
 }
+
+/*
+========================================
+  DARK MODE
+========================================
+*/
+
+[data-theme="dark"] {
+  background-color: #111;
+  color: #eee;
+}
+
+[data-theme="dark"] a {
+  color: #9ecbff;
+}
+
+[data-theme="dark"] body,
+[data-theme="dark"] nav {
+  background-color: #111;
+  color: #eee;
+}
+
+[data-theme="dark"] nav a {
+  color: #ccc;
+}
+
+[data-theme="dark"] .current {
+  border-bottom-color: #66ff99;
+}
+
