@@ -23,6 +23,19 @@ h1, h2, h3 {
   font-family: 'Montserrat', sans-serif;
 }
 
+.responsive-image {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: cover;
+}
+
+.container {
+  width: 100%;
+  max-width: 100ch;
+  margin: 0 auto;
+  padding: 20px;
+}
 
 /*
 ========================================
@@ -96,3 +109,190 @@ nav .current {
   border-bottom-color: #66ff99;
 }
 
+/* 
+=============
+PROJECTS PAGE
+=============
+*/
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1em;
+  padding: 20px;
+  grid-template-rows: subgrid;
+}
+
+.projects article {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-row: span 3;
+}
+
+.projects h2 {
+  font-size: 1.5em;
+  margin-bottom: 0.5em;
+  color: #333;
+  margin: 0;
+}
+
+.projects p {
+  font-size: 1rem;
+  color: #666;
+}
+
+.projects img {
+  width: 100%;
+  height: auto;
+}
+
+.projects time {
+  display: block;
+  font-style: italic;
+  color: #777;
+  font-size: 0.9rem;
+  margin-top: 0.25em;
+}
+
+.project-year {
+  font-family: 'Baskerville', serif;
+  font-variant-numeric: oldstyle-nums;
+  font-style: italic;
+  color: #777;
+}
+
+#projects-pie-plot {
+  max-width: 20em;
+  margin-block: 2em;
+  overflow: visible;
+}
+
+.projects-overview {
+  margin-block: 2em;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5em;
+}
+
+.legend {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(9em, 1fr));
+  gap: 1em;
+  margin-block: 1em;
+  padding: 1em;
+  border: 1px solid #ccc;
+  background-color: #fafafa;
+  border-radius: 0.5em;
+}
+
+.legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.legend-item .swatch {
+  width: 1em;
+  height: 1em;
+  background-color: var(--color);
+  display: inline-block;
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+}
+
+.legend-item.selected {
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.chart-and-legend {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2em;
+  flex-wrap: wrap;
+}
+
+.chart-and-legend > svg {
+  flex-shrink: 0;
+  display: block;
+}
+
+.chart-and-legend > .legend {
+  flex: 1;
+  align-self: center;
+}
+
+path {
+  transition: 300ms;
+  cursor: pointer;
+}
+
+svg:has(path:hover) path:not(:hover) {
+  opacity: 0.5;
+}
+
+.selected:is(path) {
+  stroke: black;
+  stroke-width: 1.5;
+}
+
+.searchBar {
+  padding: 0.75em 1em;
+  border: 1px solid #ccc;
+  border-radius: 0.5em;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.searchBar:focus {
+  outline: 2px solid var(--color-accent);
+}
+
+.back-to-top {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  text-decoration: none;
+  font-size: 1.2rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 0.4em;
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  transition: transform 0.2s;
+}
+
+.back-to-top:hover {
+  transform: scale(1.1);
+  background-color: #f5f5f5;
+}
+
+/* Dark mode specific overrides */
+[data-theme="dark"] .projects h2,
+[data-theme="dark"] .projects p {
+  color: #eee;
+}
+
+[data-theme="dark"] .legend,
+[data-theme="dark"] .legend * {
+  color: #000 !important;
+}
+
+
+[data-theme="dark"] body,
+[data-theme="dark"] nav,
+[data-theme="dark"] main,
+[data-theme="dark"]:not(.cv-page) .container {
+  background-color: #111;
+  color: #eee;
+}
+
+[data-theme="dark"] .container,
+[data-theme="dark"] .projects article,
+[data-theme="dark"] nav,
+[data-theme="dark"] section {
+  border: none;
+  box-shadow: none;
+}

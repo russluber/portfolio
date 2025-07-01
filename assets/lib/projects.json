@@ -1,0 +1,56 @@
+[
+    {
+        "title": "Project 1",
+        "year": 2025,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Nothing right now."
+    },
+    {
+        "title": "Project 2",
+        "year": 2025,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Coming soon."
+    },
+    {
+        "title": "Project 3",
+        "year": 2025,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Probably in a few weeks."
+    },
+    {
+        "title": "Project 4",
+        "year": 2025,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Come back next time."
+    },
+    {
+        "title": "Project 5",
+        "year": 2023,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Much wow."
+    },
+    {
+        "title": "Project 6",
+        "year": 2023,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Huh?"
+    },
+    {
+        "title": "Project 7",
+        "year": 2023,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "What is this?"
+    },
+    {
+        "title": "Project 8",
+        "year": 2024,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Nothing here yet, huh?"
+    },
+    {
+        "title": "Project 9",
+        "year": 2023,
+        "image": "https://vis-society.github.io/labs/2/images/empty.svg",
+        "description": "Yikes. Still nothing?"
+    }
+]
