@@ -413,6 +413,14 @@ HOMEPAGE LAYOUT
   margin-bottom: 1rem;
 }
 
+section.project-previews .projects {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1em;
+  padding: 1em 0;
+}
+
 
 /*
 ========================================
@@ -440,7 +448,6 @@ HOMEPAGE LAYOUT
   margin: 0;
   color: #555;
 }
-
 
 .stats-container {
   display: flex;
