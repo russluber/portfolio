@@ -1,18 +1,54 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio Site</title>
-    <link rel="stylesheet" href="assets/css/style.css"> 
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Russel Luber — Portfolio</title>
+  <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 <body>
-    <div id="theme-toggle"></div>
-    <main>
-        <h1>Russel Luber</h1>
-        <p>Hi, my name is Russel. I'm interested in data science, statistics, and causal inference.</p>
+  <div id="theme-toggle"></div>
+
+  <div class="layout">
+    <!-- Left Leaf: Profile -->
+    <aside class="profile-pane">
+      <img src="assets/images/pfp1.jpg" class="profile-pic"/>
+      <h2>Russel Luber</h2>
+      <ul class="profile-links">
+        <li><a href="mailto:russelhluber@gmail.com">📧 Email</a></li>
+        <li><a href="https://github.com/russluber" target="_blank" rel="noopener">💻 GitHub</a></li>
+        <li><a href="projects/">📂 Projects</a></li>
+        <li><a href="blog/">📝 Blog</a></li>
+        <li><a href="cv/">📄 CV</a></li>
+      </ul>
+    </aside>
+
+    <!-- Right Leaf: Scrollable Main Content -->
+    <main class="main-content">
+      <section class="intro">
+        <h1>Hello!</h1>
+        <p>I’m Russel. Always fiending to learn more about data science, statistics, and causal inference. This is my digital bodega.</p>
+      </section>
+
+      <section class="project-previews">
+        <h2>Recent Projects</h2>
+        <div class="projects" id="projects-container"></div>
+      </section>
+
+      <section>
+            <div id="profile-stats" class="stats-container">
+                <div class="stats-title">GitHub Profile Stats</div>
+                <div 
+                    class="stats-flex" id="profile-stats-grid">
+                    <!-- Filled in dynamically -->
+                </div>
+            </div>
+      </section>
     </main>
-    <button class="back-to-top" aria-label="Back to top">🔝</button>
-    <script type="module" src="assets/js/global.js"></script>
+  </div>
+
+  <button class="back-to-top" aria-label="Back to top">🔝</button>
+  <script type="module" src="./assets/js/global.js"></script>
+  <script type="module" src="./assets/js/index.js"></script>
 </body>
 </html>

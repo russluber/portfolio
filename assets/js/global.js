@@ -8,6 +8,9 @@ console.log("Global JS is loaded!");
 
 /**
  * $$ — shorthand for document.querySelectorAll()
+ * @param {string} selector — CSS selector
+ * @param {Element|Document} context — where to query (defaults to document)
+ * @returns {Array<Element>}
  */
 function $$(selector, context = document) {
   return Array.from(context.querySelectorAll(selector));
@@ -28,7 +31,7 @@ const pages = [
   { url: "", title: "Home" },
   { url: "projects/", title: "Projects" },
   { url: "blog/", title: "Blog" },
-  { url: "https://github.com/russluber", title: "GitHub" }
+  { url: "cv/", title: "C.V." }
 ];
 
 // Create and insert nav element
@@ -116,12 +119,11 @@ document.querySelector('.back-to-top')?.addEventListener('click', (e) => {
 });
 
 
-  /*
-  =============
-  Projects Page
-  =============
-  */
-
+/*
+=============
+Projects Page
+=============
+*/
 export async function fetchJSON(url) {
   try {
     // Fetch the JSON file from the given URL

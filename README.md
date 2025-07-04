@@ -8,7 +8,6 @@ This site is a one-stop hub for:
 - My resume, skills, and contact info
 
 ---
-
 ## 🛠️ Tech Stack
 
 - HTML / CSS / JS
