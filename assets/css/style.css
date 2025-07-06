@@ -449,6 +449,12 @@ section.project-previews .projects {
   color: #555;
 }
 
+#profile-stats-grid {
+  max-width: 100%;
+  width: 100%;
+  justify-content: center;
+}
+
 .stats-container {
   display: flex;
   flex-direction: column;
@@ -458,8 +464,9 @@ section.project-previews .projects {
   border-radius: 8px;
   padding: 1.75em 2em;
   box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-  margin-top: 2em;
-  max-width: 100%;
+  margin: 2em auto;
+  max-width: 600px;
+  width: 100%;
 }
 
 .stats-title {
@@ -469,7 +476,8 @@ section.project-previews .projects {
   letter-spacing: 0.03em;
   color: #333;
   margin-bottom: 1em;
-  align-self: flex-start;
+  align-self: center;
+  text-align: center;
 }
 
 .stats-flex {
