@@ -30,9 +30,9 @@ h1, h2, h3 {
   object-fit: cover;
 }
 
-.container {
+.projects-container {
   width: 100%;
-  max-width: 100ch;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
 }
@@ -161,16 +161,34 @@ PROJECTS PAGE
 
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: 1em;
-  padding: 20px;
-  grid-template-rows: subgrid;
+  margin-bottom: 2rem;
+  width: 100%;
 }
 
 .projects article {
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-row: span 3;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--background-color, white);
+  border: 2px solid rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 1em;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+  overflow: hidden;
+}
+
+.projects article:hover {
+  transform: scale(1.02);
+}
+
+.projects article img {
+  width: 100%;
+  max-height: 150px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-bottom: 0.5em;
 }
 
 .projects h2 {
@@ -287,6 +305,7 @@ svg:has(path:hover) path:not(:hover) {
   border-radius: 0.5em;
   font-size: 1rem;
   width: 100%;
+  margin-bottom: 1rem;
 }
 
 .searchBar:focus {
@@ -332,13 +351,33 @@ svg:has(path:hover) path:not(:hover) {
   color: #eee;
 }
 
-[data-theme="dark"] .container,
+[data-theme="dark"] .projects-container,
 [data-theme="dark"] .projects article,
 [data-theme="dark"] nav,
 [data-theme="dark"] section {
   border: none;
   box-shadow: none;
 }
+
+
+[data-theme="dark"] .projects article {
+  background-color: #1e1e1e;
+  border: 1px solid #444;
+}
+
+[data-theme="dark"] .projects article:hover {
+  transform: scale(1.02);
+  background-color: #2a2a2a;
+}
+
+[data-theme="dark"] .projects .project-link {
+  color: #9ecbff;
+}
+
+[data-theme="dark"] .project-year {
+  color: #aaa;
+}
+
 
 /*
 ===============
