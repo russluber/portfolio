@@ -142,95 +142,6 @@ export async function fetchJSON(url) {
   }
 }
 
-// Projects Page & Home Page Func for Rendering Project Previews
-// export function renderProjects(projects, containerElement, headingLevel = 'h2') {
-//   containerElement.innerHTML = '';
-
-//   for (const project of projects) {
-//     const article = document.createElement('article');
-
-//     article.innerHTML = `
-//       <${headingLevel}>${project.title}</${headingLevel}>
-//       <img src="${project.image}" alt="${project.title}">
-//       <div>
-//         <p>${project.description}</p>
-//         <time datetime="${project.year}">c. ${project.year}</time>
-//       </div>
-//     `;
-
-//     containerElement.appendChild(article);
-//   }
-// }
-
-
-// export function renderProjects(projects, containerElement, headingLevel = 'h2') {
-//   containerElement.innerHTML = '';
-
-//   if (projects.length === 0) {
-//     const emptyMsg = document.createElement('p');
-//     emptyMsg.textContent = 'No projects found.';
-//     emptyMsg.className = 'no-results';
-//     containerElement.appendChild(emptyMsg);
-//     return;
-//   }
-
-//   // Optional section header
-//   const sectionHeader = document.createElement('h2');
-//   sectionHeader.className = 'section-header';
-//   sectionHeader.textContent = 'Projects';
-//   containerElement.appendChild(sectionHeader);
-
-//   // Grid wrapper
-//   const grid = document.createElement('div');
-//   grid.className = 'projects';
-
-//   for (const project of projects) {
-//     const article = document.createElement('article');
-
-//     // Image
-//     const imgWrapper = document.createElement('div');
-//     imgWrapper.className = 'img-container';
-
-//     const img = document.createElement('img');
-//     img.src = project.image;
-//     img.alt = project.title;
-//     img.loading = 'lazy';
-//     img.style.objectFit = 'contain';
-
-//     imgWrapper.appendChild(img);
-//     article.appendChild(imgWrapper);
-
-//     // Title
-//     const heading = document.createElement(headingLevel);
-//     heading.textContent = project.title;
-//     article.appendChild(heading);
-
-//     // Description
-//     const description = document.createElement('p');
-//     description.textContent = project.description;
-//     article.appendChild(description);
-
-//     // Link
-//     if (project.url && project.url !== '#') {
-//       const link = document.createElement('a');
-//       link.href = project.url;
-//       link.textContent = 'Link';
-//       link.className = 'project-link';
-//       article.appendChild(link);
-//     }
-
-//     // Year
-//     const year = document.createElement('p');
-//     year.className = 'project-year';
-//     year.textContent = `c. ${project.year}`;
-//     article.appendChild(year);
-
-//     grid.appendChild(article);
-//   }
-
-//   containerElement.appendChild(grid);
-// }
-
 export function renderProjects(projects, containerElement, headingLevel = 'h2') {
   containerElement.innerHTML = '';
 
@@ -265,11 +176,18 @@ export function renderProjects(projects, containerElement, headingLevel = 'h2') 
 
     // Link
     if (project.url && project.url !== '#') {
+      const linkWrapper = document.createElement('div');
+      linkWrapper.className = 'link-wrapper';
+
       const link = document.createElement('a');
       link.href = project.url;
-      link.textContent = 'Link';
+      link.textContent = 'View Project';
       link.className = 'project-link';
-      article.appendChild(link);
+      link.target = '_blank';
+      link.rel = 'noopener noreferrer';
+
+      linkWrapper.appendChild(link);
+      article.appendChild(linkWrapper);
     }
 
     // Year

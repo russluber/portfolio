@@ -1,9 +1,10 @@
 [
     {
-        "title": "Project 1",
+        "title": "FlipTop Analysis",
         "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Nothing right now."
+        "description": "Nothing right now.",
+        "url": "https://github.com/russluber/fliptop-analysis"
     },
     {
         "title": "Project 2",

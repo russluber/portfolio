@@ -332,6 +332,27 @@ svg:has(path:hover) path:not(:hover) {
   background-color: #f5f5f5;
 }
 
+.link-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 1em;
+}
+
+.project-link {
+  text-decoration: none;
+  background-color: var(--color-accent, #28a745);
+  color: white;
+  padding: 0.5em 1.2em;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.project-link:hover {
+  background-color: #218838; /* darker green */
+}
+
+
 [data-theme="dark"] .projects h2,
 [data-theme="dark"] .projects p {
   color: #eee;
@@ -376,6 +397,16 @@ svg:has(path:hover) path:not(:hover) {
 [data-theme="dark"] .project-year {
   color: #aaa;
 }
+
+[data-theme="dark"] .project-link {
+  background-color: #44c27c;
+  color: #111;
+}
+
+[data-theme="dark"] .project-link:hover {
+  background-color: #2fa164;
+}
+
 
 
 /*
