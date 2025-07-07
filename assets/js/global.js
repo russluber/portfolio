@@ -59,27 +59,6 @@ for (const page of pages) {
 }
 
 
-// Profile Pane
-
-let lastScrollTop = 0;
-const profilePane = document.querySelector('.profile-pane');
-
-window.addEventListener('scroll', () => {
-  const st = window.pageYOffset || document.documentElement.scrollTop;
-
-  if (st > lastScrollTop) {
-    // scrolling down
-    profilePane.style.transform = 'translateX(-100%)';
-  } else {
-    // scrolling up
-    profilePane.style.transform = 'translateX(0)';
-  }
-
-  lastScrollTop = st <= 0 ? 0 : st;
-});
-
-
-
 /*
 ================
 Dark mode toggle

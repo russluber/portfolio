@@ -37,26 +37,12 @@ h1, h2, h3 {
   padding: 20px;
 }
 
-/* #homepage-projects .projects {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1em;
-}
-
-#homepage-projects .projects article {
-  flex: 0 1 260px;
-  max-width: 260px;
-  width: 100%;
-  margin: 0.5em;
-} */
-
 #homepage-projects .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   justify-content: center;
-  gap: 1.5em;
-  max-width: 1000px;
+  gap: 1em;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0 1em;
   width: 100%;
@@ -64,8 +50,8 @@ h1, h2, h3 {
 }
 
 #homepage-projects .projects article {
-  max-width: 260px;
   width: 100%;
+  max-width: 280px;
 }
 
 
@@ -677,5 +663,23 @@ RESPONSIVE DESIGN
   .profile-pic {
     width: 80px;
     height: 80px;
+  }
+}
+
+@media (max-width: 900px) {
+  #homepage-projects .projects {
+    grid-template-columns: repeat(2, 1fr); /* Medium screens: 2 cards */
+    gap: 1.25em;
+    padding: 0 1rem;
+    max-width: 90vw;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 600px) {
+  #homepage-projects .projects {
+    grid-template-columns: 1fr; /* Small screens: 1 card */
+    gap: 1em;
+    padding: 0 0.75rem;
   }
 }

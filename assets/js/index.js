@@ -8,39 +8,6 @@ const loadLatestProjects = async () => {
   renderProjects(latestProjects, projectsContainer, 'h2');
 };
 
-// // Profile Pane Behavior
-// let lastScrollTop = 0;
-// const profilePane = document.querySelector('.profile-pane');
-// const hoverTrigger = document.querySelector('.hover-trigger');
-
-// if (profilePane && hoverTrigger) {
-//   window.addEventListener('scroll', () => {
-//     const st = window.pageYOffset || document.documentElement.scrollTop;
-
-//     if (st > lastScrollTop) {
-//       // scrolling down
-//       profilePane.style.transform = 'translateX(-100%)';
-//     } else {
-//       // scrolling up
-//       profilePane.style.transform = 'translateX(0)';
-//     }
-
-//     lastScrollTop = st <= 0 ? 0 : st;
-//   });
-
-//   // Show profile pane again when hovering over the left side
-//   hoverTrigger.addEventListener('mouseenter', () => {
-//     profilePane.style.transform = 'translateX(0)';
-//   });
-
-//   hoverTrigger.addEventListener('mouseleave', () => {
-//     // Only hide if user had previously scrolled down
-//     if (window.scrollY > lastScrollTop) {
-//       profilePane.style.transform = 'translateX(-100%)';
-//     }
-//   });
-// }
-
 
 // Pane Behavior
 const profilePane = document.querySelector('.profile-pane');
