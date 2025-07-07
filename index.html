@@ -11,17 +11,20 @@
 
   <div class="layout">
     <!-- Left Leaf: Profile -->
-    <aside class="profile-pane">
-      <img src="./assets/images/pfp1.jpg" class="profile-pic"/>
-      <h2>Russel Luber</h2>
-      <ul class="profile-links">
-        <li><a href="mailto:russelhluber@gmail.com">📧 Email</a></li>
-        <li><a href="https://github.com/russluber" target="_blank" rel="noopener">💻 GitHub</a></li>
-        <li><a href="projects/">📂 Projects</a></li>
-        <li><a href="blog/">📝 Blog</a></li>
-        <li><a href="cv/">📄 CV</a></li>
-      </ul>
-    </aside>
+     <div class="hover-trigger">
+        <aside class="profile-pane">
+          <img src="./assets/images/pfp1.jpg" class="profile-pic"/>
+          <h2>Russel Luber</h2>
+          <ul class="profile-links">
+            <li><a href="mailto:russelhluber@gmail.com">📧 Email</a></li>
+            <li><a href="https://github.com/russluber" target="_blank" rel="noopener">💻 GitHub</a></li>
+            <li><a href="projects/">📂 Projects</a></li>
+            <li><a href="blog/">📝 Blog</a></li>
+            <li><a href="cv/">📄 CV</a></li>
+          </ul>
+        </aside>
+     </div>
+
 
     <!-- Right Leaf: Scrollable Main Content -->
     <main class="main-content">
@@ -30,9 +33,9 @@
         <p>I’m Russel. Always fiending to learn more about data science, statistics, and causal inference. This is my digital bodega.</p>
       </section>
 
-      <section class="project-previews">
+      <section class="project-previews" id="homepage-projects">
         <h2>Recent Projects</h2>
-        <div class="projects" id="projects-container"></div>
+        <div class="projects"></div>
       </section>
 
       <section>

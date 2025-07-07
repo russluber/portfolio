@@ -8,6 +8,75 @@ const loadLatestProjects = async () => {
   renderProjects(latestProjects, projectsContainer, 'h2');
 };
 
+// // Profile Pane Behavior
+// let lastScrollTop = 0;
+// const profilePane = document.querySelector('.profile-pane');
+// const hoverTrigger = document.querySelector('.hover-trigger');
+
+// if (profilePane && hoverTrigger) {
+//   window.addEventListener('scroll', () => {
+//     const st = window.pageYOffset || document.documentElement.scrollTop;
+
+//     if (st > lastScrollTop) {
+//       // scrolling down
+//       profilePane.style.transform = 'translateX(-100%)';
+//     } else {
+//       // scrolling up
+//       profilePane.style.transform = 'translateX(0)';
+//     }
+
+//     lastScrollTop = st <= 0 ? 0 : st;
+//   });
+
+//   // Show profile pane again when hovering over the left side
+//   hoverTrigger.addEventListener('mouseenter', () => {
+//     profilePane.style.transform = 'translateX(0)';
+//   });
+
+//   hoverTrigger.addEventListener('mouseleave', () => {
+//     // Only hide if user had previously scrolled down
+//     if (window.scrollY > lastScrollTop) {
+//       profilePane.style.transform = 'translateX(-100%)';
+//     }
+//   });
+// }
+
+
+// Pane Behavior
+const profilePane = document.querySelector('.profile-pane');
+const hoverTrigger = document.querySelector('.hover-trigger');
+
+let lastScrollTop = 0;
+
+window.addEventListener('scroll', () => {
+  const st = window.pageYOffset || document.documentElement.scrollTop;
+
+  if (st > lastScrollTop) {
+    // Scrolling down → hide profile
+    profilePane.classList.add('hidden');
+  } else {
+    // Scrolling up → show profile
+    profilePane.classList.remove('hidden');
+  }
+
+  lastScrollTop = st <= 0 ? 0 : st;
+});
+
+// Hover in/out control
+hoverTrigger.addEventListener('mouseenter', () => {
+  profilePane.classList.remove('hidden');
+});
+
+hoverTrigger.addEventListener('mouseleave', () => {
+  // Only re-hide if we're still scrolled down
+  if (window.scrollY > 0) {
+    profilePane.classList.add('hidden');
+  }
+});
+
+
+
+
 // Render GitHub stats in summary format
 const renderGitHubStats = async () => {
   const githubData = await fetchGitHubData('russluber');
