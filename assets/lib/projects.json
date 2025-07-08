@@ -3,7 +3,7 @@
         "title": "FlipTop Analysis",
         "year": 2025,
         "image": "https://vis-society.github.io/labs/2/images/empty.svg",
-        "description": "Nothing right now.",
+        "description": "This project explores rap battles in the FlipTop Battle League, focusing on analyzing the event histories of individual emcees. It builds career timelines based on battle appearances and uses network analysis to create a 1v1 battle graph that maps the relationships between emcees.",
         "url": "https://github.com/russluber/fliptop-analysis"
     },
     {
